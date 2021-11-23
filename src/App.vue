@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="widget__container">
+      <fxConverterWidget />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import fxConverterWidget from "@/components/fxConverter_widget.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    fxConverterWidget,
   },
 };
 </script>
 
 <style lang="scss">
+body {
+  margin:0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: url("~@/assets/images/london.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  height:100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .widget__container {
+    max-width: 750px;
+    width:100%;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+#app {
+   .widget__container {
+    max-width: 450px;
+  }
+}
 }
 </style>
